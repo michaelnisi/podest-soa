@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  manger:
+    build: ~/node/manger-http
+    image: manger
+    environment:
+      - NODE_DEBUG=manger
+      - MANGER_LOG_LEVEL=30
+    ports:
+      - 8080:8080
+  fanboy:
+    build: ~/node/fanboy-http
+    image: fanboy
+    environment:
+      - NODE_DEBUG=fanboy
+      - FANBOY_LOG_LEVEL=30
+    ports:
+      - 8081:8080
